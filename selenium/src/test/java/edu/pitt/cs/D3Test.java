@@ -149,7 +149,7 @@ public class D3Test {
     driver.get("http://localhost:8080/rent-a-cat");
     driver.findElement(By.id("rentID")).sendKeys("1");
     driver.findElement(By.xpath("//button[text()=\'Rent\']")).click();
-    driver.get("https://cs1632.appspot.com//greet-a-cat/Jennyanydots");
+    driver.get("http://localhost:8080/Jennyanydots");
     assertThat(driver.findElement(By.xpath("//body")).getText(), is("Jennyanydots is not here.\\\\n"));
   }
 }
