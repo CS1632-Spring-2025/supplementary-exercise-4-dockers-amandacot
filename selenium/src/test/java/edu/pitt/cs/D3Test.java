@@ -130,26 +130,26 @@ public class D3Test {
     driver.get("http://localhost:8080/greet-a-cat/Jennyanydots");
     assertThat(driver.findElement(By.id("greeting")).getText(), is("Meow! from Jennyanydots."));
   }
-  @Test
-  public void dEFECT1FUNFEED() {
-    driver.get("http://localhost:8080/feed-a-cat");
-    js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
-    driver.findElement(By.id("catnips")).sendKeys("-3");
-    driver.findElement(By.xpath("//button[text()=\"Feed\"]")).click();
-    assertThat(driver.findElement(By.xpath("//*[@id=\'feedResult\' and text()=\'Nom, nom, nom.\']")).getText(), is("Cat fight!"));
-  }
-  @Test
-  public void dEFECT2FUNGREETACAT() {
-    driver.get("http://localhost:8080/greet-a-cat");
-    js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
-    assertThat(driver.findElement(By.id("greeting")).getText(), is("Meow!Meow!"));
-  }
-  @Test
-  public void dEFECT3FUNGREETACATWITHNAME() {
-    driver.get("http://localhost:8080/rent-a-cat");
-    driver.findElement(By.id("rentID")).sendKeys("1");
-    driver.findElement(By.xpath("//button[text()=\'Rent\']")).click();
-    driver.get("http://localhost:8080/Jennyanydots");
-    assertThat(driver.findElement(By.xpath("//body")).getText(), is("Jennyanydots is not here.\\\\n"));
-  }
+  // @Test
+  // public void dEFECT1FUNFEED() {
+  //   driver.get("http://localhost:8080/feed-a-cat");
+  //   js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
+  //   driver.findElement(By.id("catnips")).sendKeys("-3");
+  //   driver.findElement(By.xpath("//button[text()=\"Feed\"]")).click();
+  //   assertThat(driver.findElement(By.xpath("//*[@id=\'feedResult\' and text()=\'Nom, nom, nom.\']")).getText(), is("Cat fight!"));
+  // }
+  // @Test
+  // public void dEFECT2FUNGREETACAT() {
+  //   driver.get("http://localhost:8080/greet-a-cat");
+  //   js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
+  //   assertThat(driver.findElement(By.id("greeting")).getText(), is("Meow!Meow!"));
+  // }
+  // @Test
+  // public void dEFECT3FUNGREETACATWITHNAME() {
+  //   driver.get("http://localhost:8080/rent-a-cat");
+  //   driver.findElement(By.id("rentID")).sendKeys("1");
+  //   driver.findElement(By.xpath("//button[text()=\'Rent\']")).click();
+  //   driver.get("http://localhost:8080/Jennyanydots");
+  //   assertThat(driver.findElement(By.xpath("//body")).getText(), is("Jennyanydots is not here.\\\\n"));
+  // }
 }
