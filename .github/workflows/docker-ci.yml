@@ -47,3 +47,9 @@ jobs:
 
       - name: Run Selenium Tests
         run: cd selenium && mvn test
+
+      - name: Show Test Failure Details
+        if: failure()
+        run: |
+          echo "=== SUREFIRE REPORTS ==="
+          cat selenium/target/surefire-reports/*.txt || true
