@@ -23,6 +23,8 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.chrome.ChromeOptions;
+import java.time.Duration;
+
 public class D3Test {
   private WebDriver driver;
   private Map<String, Object> vars;
