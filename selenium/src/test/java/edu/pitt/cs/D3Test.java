@@ -124,6 +124,13 @@ public class D3Test {
     driver.get("http://localhost:8080/feed-a-cat");
     driver.findElement(By.id("catnips")).sendKeys("6");
     driver.findElement(By.xpath("//button[text()=\"Feed\"]")).click();
+
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    WebElement feedResult = wait.until(ExpectedConditions.presenceOfElementLocated(
+      By.xpath("//*[@id='feedResult' and text()='Nom, nom, nom.']")
+    ));
+
+    
     assertThat(driver.findElement(By.xpath("//*[@id=\'feedResult\' and text()=\'Nom, nom, nom.\']")).getText(), is("Nom, nom, nom."));
   }
   @Test
